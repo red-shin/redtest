@@ -1,0 +1,27 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      # secretsの使い方（例）
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+          # secretsの認証情報の利用
+          # ${{}}を使って、リポジトリのsecretsから認証情報にアクセスします。
+          #  ※"my_secret_token"は自分で作ったsecretsの名前です。必ず自分で作成したsecretsの名前に変更してください。
+          #  ※認証情報の使い方によって入力値が異なるので、自分で入力値を調べてください。
+          #  ※認証情報を使う場合、公開リポジトリ内にhiddenリポジトリを作ることをおすすめします。
+          env:
+            my_secret_token: '${{ secrets.my_secret_token }}'
