@@ -3,9 +3,6 @@ import openai
 import os
 from linebot import WebhookParser, LineBotApi
 from linebot.models import TextSendMessage
-from dotenv import load_dotenv
-
-load_dotenv()
 
 OPENAI_API_KEY = os.environ['API_KEY']
 LINE_CHANNEL_ACCESS_TOKEN = os.environ['LINE_AKEY']
