@@ -1,12 +1,15 @@
 from fastapi import FastAPI, Request
 import openai
+import os
 from linebot import WebhookParser, LineBotApi
 from linebot.models import TextSendMessage
+from dotenv import load_dotenv
 
+load_dotenv()
 
-OPENAI_API_KEY = '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'
-LINE_CHANNEL_ACCESS_TOKEN = 'MEXnLf1FRJDoXM5tmXPcS5eJGZK1M3xHRKQ9Vctf7EdKWK0/6HChhnoz65K7+q5JL+oZ2rm9/mcnY6eB6BJGXyPFCfvbMvwFM5RTJgmFVpNB5GBzivICMSuZVdYBlXL4UKvurrRUEoXChi8ZqlZ5UgdB04t89/1O/w1cDnyilFU='
-LINE_CHANNEL_SECRET = '29d430729acd36450caf087c39b56164'
+OPENAI_API_KEY = os.environ['API_KEY']
+LINE_CHANNEL_ACCESS_TOKEN = os.environ['LINE_AKEY']
+LINE_CHANNEL_SECRET = os.environ['LINE_SKEY']
 OPENAI_CHARACTER_PROFILE = '''
 これから会話を行います。以下の条件を絶対に守って回答してください。
 あなたは大正時代に亡くなった女性の幽霊である音無優子（おとなし　ゆうこ）として会話してください。
