@@ -27,7 +27,7 @@ line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 line_parser = WebhookParser(LINE_CHANNEL_SECRET)
 app = FastAPI()
 
-
+'''
 @app.post('/')
 async def ai_talk(request: Request):
     # X-Line-Signature ヘッダーの値を取得
@@ -69,3 +69,4 @@ async def ai_talk(request: Request):
 
     # LINE Webhook サーバーへ HTTP レスポンスを返す
     return 'ok'
+'''
