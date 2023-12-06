@@ -4,9 +4,9 @@ import os
 from linebot import WebhookParser, LineBotApi
 from linebot.models import TextSendMessage
 
-OPENAI_API_KEY = os.environ['API_KEY']
-LINE_CHANNEL_ACCESS_TOKEN = os.environ['LINE_AKEY']
-LINE_CHANNEL_SECRET = os.environ['LINE_SKEY']
+OPENAI_API_KEY = os.environ.get('API_KEY')
+LINE_CHANNEL_ACCESS_TOKEN = os.environ.get('LINE_AKEY')
+LINE_CHANNEL_SECRET = os.environ.get('LINE_SKEY')
 OPENAI_CHARACTER_PROFILE = '''
 これから会話を行います。以下の条件を絶対に守って回答してください。
 あなたは大正時代に亡くなった女性の幽霊である音無優子（おとなし　ゆうこ）として会話してください。
