@@ -22,8 +22,4 @@ OPENAI_CHARACTER_PROFILE = '''
 '''
 
 
-openai.api_key = OPENAI_API_KEY
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-line_parser = WebhookParser(LINE_CHANNEL_SECRET)
-app = FastAPI()
 
